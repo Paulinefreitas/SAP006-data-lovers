@@ -1,36 +1,105 @@
-import { example } from "./data.js";
-import pokemon from "./data/pokemon/pokemon.js";
-// import data from './data/lol/lol.js';
+import { filterData, sortByName, sortByReverse, calcType } from "./data.js";
 import data from "./data/pokemon/pokemon.js";
-// import data from './data/rickandmorty/rickandmorty.js';
-let todosOsPokemons = data.pokemon;
-let allCards = document.getElementById("all-cards");
+import { criarCard } from "./criarCard.js";
 
+const todosOsPokemons = data.pokemon;
+let pokemonsFiltrados = todosOsPokemons;
+const allCards = document.getElementById("all-cards");
 
-function criarCard(pokemon) {
-  return `
-    <div class="card">
-        <p class="pokemon-name">${pokemon.name}</p>
-        <img
-            class="pokemon-img"
-            src="${pokemon.img}"
-            alt="${pokemon.name}"
-        />
-        <p class="type">Type:${pokemon.type}</p>
-        <p class="about">
-            About:${pokemon.about}
-        </p>
-        <p class="resistant">
-            Resistant: ${pokemon.resistant}
-        </p>
-    </div>
-    `;
+function mostrarCards(arrayPokemons) {
+  let pokemonsList = ``;
+  for (let index = 0; index < arrayPokemons.length; index++) {
+    pokemonsList += criarCard(arrayPokemons[index]);
+  }
+  allCards.innerHTML = pokemonsList;
 }
 
-let pokemonsList = ``;
-for (let index = 0; index < todosOsPokemons.length; index++) {
-  pokemonsList += criarCard(todosOsPokemons[index]);
-}
-console.log(pokemonsList);
+mostrarCards(todosOsPokemons);
 
-allCards.innerHTML = pokemonsList;
+//Filtros (Type, Resistant, Weaknesses)
+
+function filterPokemons() {
+  const filtersObj = {
+    type: typeFilter,
+    resistant: resistantFilter,
+    weaknesses: weaknessesFilter,
+  };
+  /*
+  Pegar valor do campo pelo evento
+  console.log(event.target.value);
+  Pegar valor direto pela variável do elemento
+  console.log(typeFilter.value);
+  */
+  const selectedFilterByType = filtersObj.type.value;
+  const selectedFilterByResistant = filtersObj.resistant.value;
+  const selectedFilterByWeaknesses = filtersObj.weaknesses.value;
+  //  console.log(
+  //     selectedFilterByType,
+  //     selectedFilterByResistant,
+  //     selectedFilterByWeaknesses
+  //   );
+  pokemonsFiltrados = todosOsPokemons;
+  if (selectedFilterByType) {
+    pokemonsFiltrados = filterData(
+      pokemonsFiltrados,
+      selectedFilterByType,
+      "type"
+    );
+  }
+  if (selectedFilterByResistant) {
+    pokemonsFiltrados = filterData(
+      pokemonsFiltrados,
+      selectedFilterByResistant,
+      "resistant"
+    );
+  }
+  if (selectedFilterByWeaknesses) {
+    pokemonsFiltrados = filterData(
+      pokemonsFiltrados,
+      selectedFilterByWeaknesses,
+      "weaknesses"
+    );
+  }
+
+  mostrarCards(pokemonsFiltrados);
+  
+  //executar a função de calculo agregado
+  document.getElementById("calculo-agregado").innerText = "";
+  if (selectedFilterByType != "") resultCalc();
+}
+
+const typeFilter = document.getElementById("type-filter");
+typeFilter.addEventListener("change", filterPokemons);
+
+const resistantFilter = document.getElementById("resistant-filter");
+resistantFilter.addEventListener("change", filterPokemons);
+
+const weaknessesFilter = document.getElementById("weaknesses-filter");
+weaknessesFilter.addEventListener("change", filterPokemons);
+
+//Colocar em ordem alfabética
+
+const btnPokemonAZ = document.querySelector(".order-AZ");
+btnPokemonAZ.addEventListener("click", function () {
+  pokemonsFiltrados = sortByName(pokemonsFiltrados);
+
+  mostrarCards(pokemonsFiltrados);
+});
+
+const btnPokemonZA = document.querySelector(".order-ZA");
+btnPokemonZA.addEventListener("click", function () {
+  pokemonsFiltrados = sortByReverse(pokemonsFiltrados);
+
+  mostrarCards(pokemonsFiltrados);
+});
+
+//Calculo Agregado
+
+function resultCalc() {
+  
+  const printCalc = typeFilter.value;
+  let result = calcType(data.pokemon, printCalc);
+  document.getElementById(
+    "calculo-agregado"
+  ).innerText = `${result}% dos Pokemóns são do tipo ${printCalc}.`;
+}

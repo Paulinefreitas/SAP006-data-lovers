@@ -15,62 +15,86 @@
         />
       </header>
       <img class="img-logo" src="imagens/fontPokemon.png" alt="Logo Pokémon " />
-      <div id="all-cards">
-        <!-- <div class="card">
-          <p class="pokemon-name">Bulbasaur</p>
-          <img
-            class="pokemon-img"
-            src="https://www.serebii.net/pokemongo/pokemon/001.png"
-            alt="imagem de pokemon"
-          />
-          <p class="type">Type:"grass", "poison"</p>
-          <p class="about">
-            About: "Bulbasaur can be seen napping in bright sunlight. There is a
-            seed on its back. By soaking up the sun's rays, the seed grows
-            progressively larger."
-          </p>
-          <p class="resistant">
-            Resistant: "water", "electric", "grass", "fighting", "fairy"
-          </p>
-          <p></p>
-        </div>
-        <div class="card">
-          <p class="pokemon-name">Bulbasaur</p>
-          <img
-            class="pokemon-img"
-            src="https://www.serebii.net/pokemongo/pokemon/001.png"
-            alt="imagem de pokemon"
-          />
-          <p class="type">Type:"grass", "poison"</p>
-          <p class="about">
-            About: "Bulbasaur can be seen napping in bright sunlight. There is a
-            seed on its back. By soaking up the sun's rays, the seed grows
-            progressively larger."
-          </p>
-          <p class="resistant">
-            Resistant: "water", "electric", "grass", "fighting", "fairy"
-          </p>
-          <p></p>
-        </div>
-        <div class="card">
-          <p class="pokemon-name">Bulbasaur</p>
-          <img
-            class="pokemon-img"
-            src="https://www.serebii.net/pokemongo/pokemon/001.png"
-            alt="imagem de pokemon"
-          />
-          <p class="type">Type:"grass", "poison"</p>
-          <p class="about">
-            About: "Bulbasaur can be seen napping in bright sunlight. There is a
-            seed on its back. By soaking up the sun's rays, the seed grows
-            progressively larger."
-          </p>
-          <p class="resistant">
-            Resistant: "water", "electric", "grass", "fighting", "fairy"
-          </p>
-          <p></p>
-        </div> -->
+      <div id="filters">
+        <form action="">
+          <label for="pokemon-type">Type</label>
+          <select name="pokemon-type" id="type-filter">
+            <option value="" selected></option>
+            <option value="bug">Bug</option>
+            <option value="dark">Dark</option>
+            <option value="dragon">Dragon</option>
+            <option value="electric">Electric</option>
+            <option value="fairy">Fairy</option>
+            <option value="fighting">Fighting</option>
+            <option value="fire">Fire</option>
+            <option value="flying">Flying</option>
+            <option value="ghost">Ghost</option>
+            <option value="grass">Grass</option>
+            <option value="ground">Ground</option>
+            <option value="ice">Ice</option>
+            <option value="normal">Normal</option>
+            <option value="poison">Poison</option>
+            <option value="psychic">Psychic</option>
+            <option value="rock">Rock</option>
+            <option value="steel">Steel</option>
+            <option value="water">Water</option>
+          </select>
+        </form>
+        <form action="">
+          <label for="pokemon-resistence">Resistence</label>
+          <select name="pokemon-resistence" id="resistant-filter">
+            <option value="" selected></option>
+            <option value="bug">Bug</option>
+            <option value="dark">Dark</option>
+            <option value="dragon">Dragon</option>
+            <option value="electric">Electric</option>
+            <option value="fairy">Fairy</option>
+            <option value="fighting">Fighting</option>
+            <option value="fire">Fire</option>
+            <option value="flying">Flying</option>
+            <option value="ghost">Ghost</option>
+            <option value="grass">Grass</option>
+            <option value="ground">Ground</option>
+            <option value="ice">Ice</option>
+            <option value="normal">Normal</option>
+            <option value="poison">Poison</option>
+            <option value="psychic">Psychic</option>
+            <option value="rock">Rock</option>
+            <option value="steel">Steel</option>
+            <option value="water">Water</option>
+          </select>
+        </form>
+        <form action="">
+          <label for="pokemon-weakness">Weakness</label>
+          <select name="pokemon-weakness" id="weaknesses-filter">
+            <option value="" selected></option>
+            <option value="bug">Bug</option>
+            <option value="dark">Dark</option>
+            <option value="dragon">Dragon</option>
+            <option value="electric">Electric</option>
+            <option value="fairy">Fairy</option>
+            <option value="fighting">Fighting</option>
+            <option value="fire">Fire</option>
+            <option value="flying">Flying</option>
+            <option value="ghost">Ghost</option>
+            <option value="grass">Grass</option>
+            <option value="ground">Ground</option>
+            <option value="ice">Ice</option>
+            <option value="normal">Normal</option>
+            <option value="poison">Poison</option>
+            <option value="psychic">Psychic</option>
+            <option value="rock">Rock</option>
+            <option value="steel">Steel</option>
+            <option value="water">Water</option>
+          </select>
+        </form>
+        <button class="order-AZ">Ordenar de A a Z</button>
+        <button class="order-ZA">Ordenar de Z a A</button>
       </div>
+      <div class="calculo-agregado" id="calculo-agregado">
+        
+      </div>
+      <div id="all-cards"></div>
     </div>
     <script src="main.js" type="module"></script>
   </body>
