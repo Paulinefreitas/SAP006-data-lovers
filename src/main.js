@@ -33,11 +33,7 @@ function filterPokemons() {
   const selectedFilterByType = filtersObj.type.value;
   const selectedFilterByResistant = filtersObj.resistant.value;
   const selectedFilterByWeaknesses = filtersObj.weaknesses.value;
-  //  console.log(
-  //     selectedFilterByType,
-  //     selectedFilterByResistant,
-  //     selectedFilterByWeaknesses
-  //   );
+ 
   pokemonsFiltrados = todosOsPokemons;
   if (selectedFilterByType) {
     pokemonsFiltrados = filterData(
