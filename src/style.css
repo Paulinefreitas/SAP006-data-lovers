@@ -18,7 +18,8 @@
   background-color: rgba(255, 255, 255, 0.494);
   border-radius: 50px;
   width: auto;
-  margin:20px
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 #filters {
@@ -32,9 +33,8 @@
 .filter-box {
   display: flex;
   flex-direction: column;
-  color: #215BA6;
+  color: #215ba6;
   font-size: x-large;
-  ;
 }
 
 .sort-btns {
@@ -44,7 +44,6 @@
   max-width: 500px;
   margin: 25px auto;
   font-size: x-large;
-  
 }
 .calculo-agregado {
   text-align: center;
@@ -52,10 +51,9 @@
   padding: 20px;
   width: 300px;
   margin: auto;
-  color: #215BA6;
+  color: #215ba6;
   font-size: 17pt;
-
-  }
+}
 
 #all-cards {
   display: flex;
