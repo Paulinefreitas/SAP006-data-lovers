@@ -6,11 +6,19 @@ const todosOsPokemons = data.pokemon;
 let pokemonsFiltrados = todosOsPokemons;
 const allCards = document.getElementById("all-cards");
 
+document.getElementById(
+  "calculo-agregado"
+).innerText = `There are ${todosOsPokemons.length} Pokémons in Kanto and Johto region.`;
+
 function mostrarCards(arrayPokemons) {
   let pokemonsList = ``;
   for (let index = 0; index < arrayPokemons.length; index++) {
     pokemonsList += criarCard(arrayPokemons[index]);
   }
+  if (arrayPokemons.length === 0) {
+    pokemonsList = `<p class="error-message">There is no Pokémon with this filter combination.</p>`;
+  }
+
   allCards.innerHTML = pokemonsList;
 }
 
@@ -33,7 +41,7 @@ function filterPokemons() {
   const selectedFilterByType = filtersObj.type.value;
   const selectedFilterByResistant = filtersObj.resistant.value;
   const selectedFilterByWeaknesses = filtersObj.weaknesses.value;
- 
+
   pokemonsFiltrados = todosOsPokemons;
   if (selectedFilterByType) {
     pokemonsFiltrados = filterData(
@@ -96,5 +104,5 @@ function resultCalc() {
   let result = calcType(data.pokemon, printCalc);
   document.getElementById(
     "calculo-agregado"
-  ).innerText = `${result}% dos Pokémons são do tipo ${printCalc}.`;
+  ).innerText = `${result}% of the Pokémons are of ${printCalc} type.`;
 }

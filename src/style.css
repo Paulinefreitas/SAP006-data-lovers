@@ -1,11 +1,17 @@
+body {
+  margin: 0;
+}
+
 #root {
   background-image: url("imagens/campobackground.jpg");
   justify-content: center;
   background-attachment: fixed;
+  min-height: 100vh;
 }
+
 #page-title {
   /*margin: 50px;*/
-  padding: 10px;
+  padding: 5px;
 }
 
 .img-logo {
@@ -15,8 +21,8 @@
 }
 
 .menu {
-  background-color: rgba(255, 255, 255, 0.494);
-  border-radius: 50px;
+  /* background-color: rgba(255, 255, 255, 0.494); */
+  /* border-radius: 50px; */
   width: auto;
   margin-left: 40px;
   margin-right: 40px;
@@ -26,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding-top: 50px;
+  padding-top: 5px;
   padding-inline-end: 10px;
 }
 
@@ -48,11 +54,28 @@
 .calculo-agregado {
   text-align: center;
   align-items: center;
-  padding: 20px;
-  width: 300px;
+  padding: 10px;
+  width: 500px;
   margin: auto;
   color: #215ba6;
   font-size: 17pt;
+  background-color: rgba(241, 242, 250, 0.515);
+  border-radius: 10px;
+  box-shadow: 0px 2px 18px rgb(5, 3, 87);
+}
+
+.error-message {
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+  width: 500px;
+  margin: auto;
+  color: #215ba6;
+  font-size: 17pt;
+  background-color: rgba(241, 242, 250, 0.515);
+  border-radius: 10px;
+  box-shadow: 0px 2px 18px rgb(5, 3, 87);
+  margin-top: 10px;
 }
 
 #all-cards {
@@ -69,9 +92,9 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  border-radius: 5%;
-  height: 450px;
-  width: 300px;
+  border-radius: 10px;
+  height: 320px;
+  width: 280px;
   box-shadow: 0px 2px 18px rgb(5, 3, 87);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 20px;
