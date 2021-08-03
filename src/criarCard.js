@@ -1,5 +1,5 @@
 export function criarCard(pokemon) {
-    return `
+  return `
       <div class="card">
           <p class="pokemon-name">${pokemon.name}</p>
           <img
@@ -8,12 +8,11 @@ export function criarCard(pokemon) {
               alt="${pokemon.name}"
           />
           <ul>
-          <li class="type">Tipo: ${pokemon.type}</li>
-          <li class="resistant">Resistência: ${pokemon.resistant}</li>
-          <li class="weaknesses">Deficiências: ${pokemon.weaknesses}</li>
-          <li class="rarity">Pokémon Raridade: ${pokemon["pokemon-rarity"]}</li>
+          <li class="type">Type: ${pokemon.type}</li>
+          <li class="resistant">Resistant: ${pokemon.resistant}</li>
+          <li class="weaknesses">Weaknesses: ${pokemon.weaknesses}</li>
+          <li class="rarity">Rarity: ${pokemon["pokemon-rarity"]}</li>
           </ul>
         </div>
       `;
-  }
- 
+}

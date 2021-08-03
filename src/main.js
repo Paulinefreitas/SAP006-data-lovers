@@ -62,7 +62,7 @@ function filterPokemons() {
   }
 
   mostrarCards(pokemonsFiltrados);
-  
+
   //executar a função de calculo agregado
   document.getElementById("calculo-agregado").innerText = "";
   if (selectedFilterByType != "") resultCalc();
@@ -96,10 +96,9 @@ btnPokemonZA.addEventListener("click", function () {
 //Calculo Agregado
 
 function resultCalc() {
-  
   const printCalc = typeFilter.value;
   let result = calcType(data.pokemon, printCalc);
   document.getElementById(
     "calculo-agregado"
-  ).innerText = `${result}% dos Pokemóns são do tipo ${printCalc}.`;
+  ).innerText = `${result}% dos Pokémons são do tipo ${printCalc}.`;
 }

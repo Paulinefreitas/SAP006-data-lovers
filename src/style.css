@@ -1,15 +1,13 @@
 #root {
-  background-color: lightblue;
+  background-image: url("imagens/campobackground.jpg");
   justify-content: center;
+  background-attachment: fixed;
 }
 #page-title {
   /*margin: 50px;*/
   padding: 10px;
 }
-#img-top {
-  height: 500px;
-  width: max-content;
-}
+
 .img-logo {
   display: block;
   margin-left: auto;
@@ -17,18 +15,32 @@
 }
 
 #filters {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
+.filter-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.sort-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 500px;
+  margin: 25px auto;
+}
 .calculo-agregado {
-  background-color: rgb(243, 238, 238);
   text-align: center;
+  align-items: center;
+  justify-content: space-around;
   padding: 20px;
   width: 300px;
   z-index: 100;
   color: red;
   position: absolute;
-
 }
 
 #all-cards {
@@ -36,9 +48,10 @@
   flex-wrap: wrap;
   font-size: small;
   margin-top: 100px;
+  justify-content: center;
 }
 .card {
-  background-color: rgb(161, 235, 119);
+  background-color: rgba(241, 242, 250, 0.515);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,10 +60,15 @@
   border-radius: 10%;
   height: 450px;
   width: 300px;
-  box-shadow: 0px 2px 18px #000;
+  box-shadow: 0px 2px 18px rgb(5, 3, 87);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 20px;
 }
+
+.pokemon-img {
+  border: 1px solid rgb(14, 61, 133);
+}
+
 .pokemon-name {
   text-align: center;
   margin: 0px;

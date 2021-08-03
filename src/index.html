@@ -7,16 +7,10 @@
   </head>
   <body>
     <div id="root">
-      <header id="page-title">
-        <img
-          id="img-top"
-          src="imagens/pokemonBcg.jpeg"
-          alt="Imagem de vários Pokémons"
-        />
-      </header>
+      <header id="page-title"></header>
       <img class="img-logo" src="imagens/fontPokemon.png" alt="Logo Pokémon " />
       <div id="filters">
-        <form action="">
+        <form action="" class="filter-box">
           <label for="pokemon-type">Type</label>
           <select name="pokemon-type" id="type-filter">
             <option value="" selected></option>
@@ -40,7 +34,7 @@
             <option value="water">Water</option>
           </select>
         </form>
-        <form action="">
+        <form action="" class="filter-box">
           <label for="pokemon-resistence">Resistence</label>
           <select name="pokemon-resistence" id="resistant-filter">
             <option value="" selected></option>
@@ -64,7 +58,7 @@
             <option value="water">Water</option>
           </select>
         </form>
-        <form action="">
+        <form action="" class="filter-box">
           <label for="pokemon-weakness">Weakness</label>
           <select name="pokemon-weakness" id="weaknesses-filter">
             <option value="" selected></option>
@@ -88,12 +82,12 @@
             <option value="water">Water</option>
           </select>
         </form>
-        <button class="order-AZ">Ordenar de A a Z</button>
-        <button class="order-ZA">Ordenar de Z a A</button>
       </div>
-      <div class="calculo-agregado" id="calculo-agregado">
-        
+      <div class="sort-btns">
+        <button class="order-AZ">Sort A to Z</button>
+        <button class="order-ZA">Sort Z to A</button>
       </div>
+      <div class="calculo-agregado" id="calculo-agregado"></div>
       <div id="all-cards"></div>
     </div>
     <script src="main.js" type="module"></script>
