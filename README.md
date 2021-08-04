@@ -1,6 +1,6 @@
 # Data Lovers
 
-<img class="foto"src="imagens/pokemonBcg.jpeg" alt="Imagem de Pokémons e humanos Felizes "/>
+<img class="foto" src="imagens/pokemonBcg.jpeg" alt="Imagem de Pokémons e humanos Felizes "/>
 
 ## 1. Introdução
 
